@@ -4,4 +4,6 @@ brew 'brew-cask'
 
 cask 'google-chrome'
 cask 'night-owl'
-
+cask 'google-japanese-ime'
+cask 'alfred'
+cask 'dropbox'
