@@ -2,6 +2,9 @@
   name = alitaso345
   email = a.maruyama@uec.ac.jp
 
+[color]
+  ui = true
+
 [alias]
   st = status -sb
   ci = commit --verbose
