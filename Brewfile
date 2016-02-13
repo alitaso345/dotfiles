@@ -1,6 +1,10 @@
 cask_args appdir: '/Applications'
 tap 'caskroom/cask'
 brew 'brew-cask'
+brew 'openssl'
+brew 'readline'
+brew 'rbenv'
+brew 'ruby-build'
 
 cask 'google-chrome'
 cask 'night-owl'
