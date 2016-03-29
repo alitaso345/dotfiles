@@ -5,6 +5,7 @@ brew 'openssl'
 brew 'readline'
 brew 'rbenv'
 brew 'ruby-build'
+brew 'clang-omp'
 
 cask 'google-chrome'
 cask 'night-owl'
