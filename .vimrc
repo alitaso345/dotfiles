@@ -1,5 +1,7 @@
 set noswapfile
 
+set history=200
+
 "Tab設定
 set tabstop=2
 set shiftwidth=2
