@@ -17,4 +17,5 @@
 
 ## Installation
 `%sh setup.sh`
+
 `%brew bundle`
