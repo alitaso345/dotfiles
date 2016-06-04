@@ -9,6 +9,12 @@
 |k  |move pane to top   |
 |l  |move pane to right |
 
+## git alias
+|key|description     |
+|---|----------------|
+|st |status -sb      |
+|ci |commit --verbose|
+
 ## Installation
 `%sh setup.sh`
 `%brew bundle`
