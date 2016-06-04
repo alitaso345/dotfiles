@@ -6,6 +6,7 @@ brew 'readline'
 brew 'rbenv'
 brew 'ruby-build'
 brew 'clang-omp'
+brew 'tmux'
 
 cask 'google-chrome'
 cask 'night-owl'
