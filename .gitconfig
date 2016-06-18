@@ -2,8 +2,12 @@
   name = alitaso345
   email = a.maruyama@uec.ac.jp
 
+[core]
+  editor = "/usr/local/bin/vim"
+
 [color]
   ui = true
+  diff = true
 
 [alias]
   st = status -sb
