@@ -33,11 +33,11 @@ if dein#check_install()
   call dein#install()
 endif
 
-
+"基本設定
+set encoding=utf-8
 set noswapfile
-
 set history=200
-
+syntax enable
 "Tab設定
 set tabstop=2
 set shiftwidth=2
