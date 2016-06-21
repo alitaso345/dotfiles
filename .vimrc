@@ -37,6 +37,7 @@ endif
 set encoding=utf-8
 set noswapfile
 set history=200
+set number
 syntax enable
 "Tab設定
 set tabstop=2
