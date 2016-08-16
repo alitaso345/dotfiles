@@ -54,3 +54,10 @@ set expandtab
 
 "検索関連
 set hlsearch
+
+"Unite
+let mapleader = "\<Space>"
+nnoremap <Leader>unite :Unite<CR>
+nnoremap <Leader>f :Unite file<CR>
+nnoremap <Leader>,f :Unite file_rec/async<CR>
+nnoremap <Leader>t :Unite tab<CR>
