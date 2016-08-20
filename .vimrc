@@ -56,8 +56,10 @@ set expandtab
 set hlsearch
 
 "Unite
+let g:unite_enable_start_insert=1
 let mapleader = "\<Space>"
 nnoremap <Leader>unite :Unite<CR>
 nnoremap <Leader>f :Unite file<CR>
 nnoremap <Leader>,f :Unite file_rec/async<CR>
 nnoremap <Leader>t :Unite tab<CR>
+nnoremap <Leader>m :Unite file_mru<CR>
