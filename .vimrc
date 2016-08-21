@@ -45,6 +45,7 @@ set history=200
 set number
 set backspace=indent,eol,start
 set clipboard=unnamed,autoselect
+set scrolloff=5
 syntax enable
 "Tab設定
 set tabstop=2
