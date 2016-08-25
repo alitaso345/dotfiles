@@ -7,6 +7,7 @@ brew 'rbenv'
 brew 'ruby-build'
 brew 'clang-omp'
 brew 'tmux'
+brew 'postgresql'
 
 cask 'google-chrome'
 cask 'night-owl'
