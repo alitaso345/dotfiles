@@ -52,7 +52,12 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
-
+nnoremap [Tag] <Nop>
+nmap t [Tag]
+map <silent> [Tag]c :tablast<bar>tabnew<CR>
+map <silent> [Tag]x :tabclose<CR>
+map <silent> [Tag]n :tabnext<CR>
+map <silent> [Tag]p :tabprevious<CR>
 "検索関連
 set hlsearch
 
