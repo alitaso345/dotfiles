@@ -46,6 +46,8 @@ set number
 set backspace=indent,eol,start
 set clipboard=unnamed,autoselect
 set scrolloff=5
+set autoindent
+set smartindent
 syntax enable
 "Tab設定
 set tabstop=2
