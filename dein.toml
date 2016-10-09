@@ -38,3 +38,6 @@ repo = 'pangloss/vim-javascript'
 
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
