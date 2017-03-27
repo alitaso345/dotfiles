@@ -13,6 +13,7 @@ eval "$(direnv hook bash)"
 #alias
 alias ga='git add'
 alias gc='git commit'
+alias gcv='git commit --verbose'
 alias gs='git status -sb'
 alias gr='git rebase -i'
 alias gd='git diff'
