@@ -1,5 +1,15 @@
 PROMPT="[%n@%~]"
 
+#alias
+alias ga='git add'
+alias gc='git commit'
+alias gca='git commit --amend'
+alias gcv='git commit --verbose'
+alias gs='git status -sb'
+alias gr='git rebase -i'
+alias gd='git diff'
+alias gp='git push'
+
 #Emacsキーバインドを使用
 bindkey -e
 
