@@ -8,6 +8,8 @@ brew 'ruby-build'
 brew 'clang-omp'
 brew 'tmux'
 brew 'postgresql'
+brew 'peco'
+brew 'zsh'
 
 cask 'google-chrome'
 cask 'night-owl'
