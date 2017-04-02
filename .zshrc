@@ -75,5 +75,6 @@ if [[ -f $HOME/.zsh/antigen/antigen.zsh ]]; then
 fi
 
 #anyframe-widget
-bindkey '^xb' anyframe-widget-cdr #過去に移動したディレクトリに移動
+bindkey '^b' anyframe-widget-cdr #過去に移動したディレクトリに移動
 bindkey '^x^o' anyframe-widget-checkout-git-branch #Gitブランチを切り替える
+bindkey '^r' anyframe-widget-execute-history #コマンド履歴から選んで実行
