@@ -9,6 +9,8 @@ brew 'clang-omp'
 brew 'tmux'
 brew 'postgresql'
 brew 'docker'
+brew 'peco'
+brew 'zsh'
 
 cask 'google-chrome'
 cask 'night-owl'

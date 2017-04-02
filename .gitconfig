@@ -12,3 +12,6 @@
 [alias]
   st = status -sb
   ci = commit --verbose
+
+[grep]
+  lineNumber = true
