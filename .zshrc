@@ -10,6 +10,10 @@ alias gr='git rebase -i'
 alias gd='git diff'
 alias gp='git push'
 
+#path
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init - zsh)"
+
 #Emacsキーバインドを使用
 bindkey -e
 
