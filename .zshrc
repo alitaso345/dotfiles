@@ -12,7 +12,8 @@ alias gp='git push'
 
 #path
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init - zsh)"
+eval "$(rbenv init - zsh)" #rbenvのpath
+eval "$(direnv hook zsh)" #dierenvのpath
 
 #Emacsキーバインドを使用
 bindkey -e
