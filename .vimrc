@@ -42,6 +42,7 @@ set clipboard=unnamed,autoselect
 set scrolloff=5
 set autoindent
 set smartindent
+set showcmd
 syntax enable
 filetype plugin indent on
 
@@ -60,7 +61,7 @@ map <silent> [Tag]p :tabprevious<CR>
 "検索関連
 set hlsearch
 
-"nerdtreeの設定
+"nerdtree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
