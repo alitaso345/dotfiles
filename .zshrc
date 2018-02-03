@@ -12,6 +12,9 @@ alias gp='git push'
 
 #path
 export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+
 eval "$(rbenv init - zsh)" #rbenvのpath
 eval "$(direnv hook zsh)" #dierenvのpath
 
