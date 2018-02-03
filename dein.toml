@@ -44,3 +44,6 @@ repo = 'scrooloose/nerdtree'
 
 [[plugins]]
 repo = 'kchmck/vim-coffee-script'
+
+[[plugins]]
+repo = 'racer-rust/vim-racer'
