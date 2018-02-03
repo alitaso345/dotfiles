@@ -16,6 +16,7 @@ if dein#load_state('$HOME/.vim/dein')
   " Add or remove your plugins here:
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
+  call dein#add('vim-scripts/vim-auto-save') "自動保存
   call dein#add('scrooloose/nerdtree') "ファイルエクスプローラー
   call dein#add('racer-rust/vim-racer') "Rustのコード補完
   call dein#add('rust-lang/rust.vim') "Rustのシンタックスハイライト，自動フォーマット
@@ -60,6 +61,8 @@ map <silent> [Tag]p :tabprevious<CR>
 
 "検索関連
 set hlsearch
+
+let g:auto_save = 1  "enable AutoSave on Vim startup
 
 "nerdtree
 autocmd StdinReadPre * let s:std_in=1
