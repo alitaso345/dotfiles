@@ -13,7 +13,10 @@ alias gp='git push'
 #path
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
+
+#Rust関連のpath
 export PATH="$HOME/.cargo/bin:$PATH"
+export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
 eval "$(rbenv init - zsh)" #rbenvのpath
 eval "$(direnv hook zsh)" #dierenvのpath

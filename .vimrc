@@ -1,7 +1,6 @@
 "dein設定
-if &compatible
-  set nocompatible
-endif
+set nocompatible
+filetype off
 
 " Required:
 set runtimepath+=$HOME/.vim/dein/repos/github.com/Shougo/dein.vim
@@ -17,7 +16,9 @@ if dein#load_state('$HOME/.vim/dein')
   " Add or remove your plugins here:
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
-  call dein#add('scrooloose/nerdtree')
+  call dein#add('scrooloose/nerdtree') "ファイルエクスプローラー
+  call dein#add('racer-rust/vim-racer') "Rustのコード補完
+  call dein#add('rust-lang/rust.vim') "Rustのシンタックスハイライト，自動フォーマット
 
   " Required:
   call dein#end()
@@ -42,6 +43,7 @@ set scrolloff=5
 set autoindent
 set smartindent
 syntax enable
+filetype plugin indent on
 
 "Tab設定
 set tabstop=2
@@ -62,3 +64,13 @@ set hlsearch
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
+
+"Rust
+"racer
+set hidden
+let g:racer_cmd = $HOME.'/.cargo/bin/racer'
+let g:racer_experimental_completer = 1
+
+"rust.vim
+let g:rustfmt_autosave = 1
+let g:rustfmt_command = $HOME.'/.cargo/bin/rustfmt'
