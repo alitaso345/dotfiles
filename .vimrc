@@ -20,6 +20,7 @@ if dein#load_state('$HOME/.vim/dein')
   call dein#add('scrooloose/nerdtree') "ファイルエクスプローラー
   call dein#add('racer-rust/vim-racer') "Rustのコード補完
   call dein#add('rust-lang/rust.vim') "Rustのシンタックスハイライト，自動フォーマット
+  call dein#add('tomlion/vim-solidity') "Solidityのシンタックスハイライト
 
   " Required:
   call dein#end()
