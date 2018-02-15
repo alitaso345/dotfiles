@@ -21,6 +21,10 @@ export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 eval "$(rbenv init - zsh)" #rbenvのpath
 eval "$(direnv hook zsh)" #dierenvのpath
 
+#npmのpath
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+
 #Emacsキーバインドを使用
 bindkey -e
 
