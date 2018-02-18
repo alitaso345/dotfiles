@@ -18,9 +18,12 @@ if dein#load_state('$HOME/.vim/dein')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('vim-scripts/vim-auto-save') "自動保存
   call dein#add('scrooloose/nerdtree') "ファイルエクスプローラー
+
+  "各言語のシンタックスハイライト
   call dein#add('racer-rust/vim-racer') "Rustのコード補完
   call dein#add('rust-lang/rust.vim') "Rustのシンタックスハイライト，自動フォーマット
   call dein#add('tomlion/vim-solidity') "Solidityのシンタックスハイライト
+  call dein#add('othree/yajs.vim') "JavaScriptのシンタックスハイライト
 
   " Required:
   call dein#end()
@@ -45,8 +48,10 @@ set scrolloff=5
 set autoindent
 set smartindent
 set showcmd
-syntax enable
+syntax on
+set term=xterm-256color
 filetype plugin indent on
+let g:auto_save = 1  "enable AutoSave on Vim startup
 
 "Tab設定
 set tabstop=2
