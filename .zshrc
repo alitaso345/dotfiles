@@ -10,20 +10,8 @@ alias gr='git rebase -i'
 alias gd='git diff'
 alias gp='git push'
 
-#path
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
-
-#Rust関連のpath
-export PATH="$HOME/.cargo/bin:$PATH"
-export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
-
 eval "$(rbenv init - zsh)" #rbenvのpath
 eval "$(direnv hook zsh)" #dierenvのpath
-
-#npmのpath
-export PATH="/usr/local/opt/icu4c/bin:$PATH"
-export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 
 #Emacsキーバインドを使用
 bindkey -e
