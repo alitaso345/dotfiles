@@ -1,4 +1,8 @@
-PROMPT="[%n@%~]"
+# プロンプトの表示
+PROMPT="[%n@]"
+
+#PATH
+export PATH=/usr/local/bin:$PATH
 
 #alias
 alias ga='git add'
@@ -65,7 +69,7 @@ zstyle ':vcs_info:*' formats '%F{green}[%b]%f'
 zstyle ':vcs_info:*' actionformats '%F{red}[%b|%a]%f'
 function _update_vcs_info_msg() {
   LANG=en_US.UTF-8 vcs_info
-  RPROMPT="${vcs_info_msg_0_}"
+  RPROMPT="%~${vcs_info_msg_0_}"
 }
 add-zsh-hook precmd _update_vcs_info_msg
 
@@ -82,3 +86,18 @@ bindkey '^v' anyframe-widget-cdr #過去に移動したディレクトリに移�
 bindkey '^o^o' anyframe-widget-checkout-git-branch #Gitブランチを切り替える
 bindkey '^r' anyframe-widget-execute-history #コマンド履歴から選んで実行
 bindkey '^r^r' anyframe-widget-put-history #コマンド履歴から選んで選択
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+
+#peco
+bindkey '^]' peco-src
+
+function peco-src() {
+  local src=$(ghq list --full-path | peco --query "$LBUFFER")
+  if [ -n "$src" ]; then
+    BUFFER="cd $src"
+    zle accept-line
+  fi
+  zle -R -c
+}
+zle -N peco-src
+export PATH="/usr/local/opt/libxml2/bin:$PATH"
