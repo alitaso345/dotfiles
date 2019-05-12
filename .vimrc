@@ -16,8 +16,9 @@ if dein#load_state('$HOME/.vim/dein')
   " Add or remove your plugins here:
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
-  call dein#add('vim-scripts/vim-auto-save') "自動保存
+  "call dein#add('vim-scripts/vim-auto-save') "自動保存
   call dein#add('scrooloose/nerdtree') "ファイルエクスプローラー
+  call dein#add('editorconfig/editorconfig-vim') "エディタのインデントとかの設定揃えるやつ
 
   "各言語のシンタックスハイライト
   call dein#add('racer-rust/vim-racer') "Rustのコード補完
@@ -51,10 +52,10 @@ set showcmd
 syntax on
 set term=xterm-256color
 filetype plugin indent on
-let g:auto_save = 1  "enable AutoSave on Vim startup
+"let g:auto_save = 1  "enable AutoSave on Vim startup
 
 "Tab設定
-set tabstop=2
+set tabstop=4
 set shiftwidth=2
 set softtabstop=2
 set expandtab
