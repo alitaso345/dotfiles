@@ -101,3 +101,4 @@ function peco-src() {
 }
 zle -N peco-src
 export PATH="/usr/local/opt/libxml2/bin:$PATH"
+export PATH="/usr/local/opt/postgres:$PATH"
