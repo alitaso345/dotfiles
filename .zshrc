@@ -2,7 +2,15 @@
 PROMPT="[%n@]"
 
 #PATH
+export GOPATH="$HOME/dev"
+
 export PATH=/usr/local/bin:$PATH
+export PATH="/usr/local/opt/libxml2/bin:$PATH"
+export PATH="/usr/local/opt/postgres:$PATH"
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+export PATH="$GOPATH/bin:$PATH"
+
 
 #alias
 alias ga='git add'
@@ -15,6 +23,7 @@ alias gd='git diff'
 alias gp='git push'
 
 eval "$(rbenv init - zsh)" #rbenvのpath
+eval "$(goenv init -)" #goenvのpath
 eval "$(direnv hook zsh)" #dierenvのpath
 
 #Emacsキーバインドを使用
@@ -75,7 +84,6 @@ bindkey '^v' anyframe-widget-cdr #過去に移動したディレクトリに移�
 bindkey '^o^o' anyframe-widget-checkout-git-branch #Gitブランチを切り替える
 bindkey '^r' anyframe-widget-execute-history #コマンド履歴から選んで実行
 bindkey '^r^r' anyframe-widget-put-history #コマンド履歴から選んで選択
-export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 
 #peco
 bindkey '^]' peco-src
@@ -89,5 +97,4 @@ function peco-src() {
   zle -R -c
 }
 zle -N peco-src
-export PATH="/usr/local/opt/libxml2/bin:$PATH"
-export PATH="/usr/local/opt/postgres:$PATH"
+
