@@ -2,15 +2,11 @@
 PROMPT="[%n@]"
 
 #PATH
-export GOPATH="$HOME/dev"
-
 export PATH=/usr/local/bin:$PATH
 export PATH="/usr/local/opt/libxml2/bin:$PATH"
 export PATH="/usr/local/opt/postgres:$PATH"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
-export PATH="$GOPATH/bin:$PATH"
-
 
 #alias
 alias ga='git add'
@@ -23,8 +19,14 @@ alias gd='git diff'
 alias gp='git push'
 
 eval "$(rbenv init - zsh)" #rbenvのpath
-eval "$(goenv init -)" #goenvのpath
 eval "$(direnv hook zsh)" #dierenvのpath
+
+# goenv
+export GOPATH="$HOME/dev"
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)" #goenvのpath
+export PATH="$GOPATH/bin:$PATH"
 
 #Emacsキーバインドを使用
 bindkey -e
