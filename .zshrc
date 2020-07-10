@@ -65,32 +65,15 @@ setopt hist_reduce_blanks #余分な空白は詰めて記録
 setopt hist_save_no_dups #古いコマンドと同じものは無視
 setopt hist_ignore_space #スペースから始めるコマンド行はリストから削除
 
-##すでに入力した内容を使って履歴を検索
-#autoload -Uz history-search-end
-#zle -N history-beginning-search-backward-end \
-#history-search-end
-#bindkey "^o" history-beginning-search-backward-end
-
-#cdr
-#autoload -Uz add-zsh-hook
-#autoload -Uz chpwd_recent_dirs cdr
-#add-zsh-hook chpwd chpwd_recent_dirs
-
-#Antigen
-#if [[ -f $HOME/.zsh/antigen/antigen.zsh ]]; then
-#  source $HOME/.zsh/antigen/antigen.zsh
-#  antigen bundle zsh-users/zsh-syntax-highlighting
-#  antigen bundle mollifier/anyframe
-#  antigen apply
-#fi
-
-#anyframe-widget
-#bindkey '^v' anyframe-widget-cdr #過去に移動したディレクトリに移動
-#bindkey '^o^o' anyframe-widget-checkout-git-branch #Gitブランチを切り替える
-#bindkey '^r' anyframe-widget-execute-history #コマンド履歴から選んで実行
-#bindkey '^r^r' anyframe-widget-put-history #コマンド履歴から選んで選択
+#antigen
+if [[ -f $HOME/.zsh/antigen/antigen.zsh ]]; then
+  source $HOME/.zsh/antigen/antigen.zsh
+  antigen bundle zsh-users/zsh-syntax-highlighting #zhsのシンタックスハイライト
+  antigen apply
+fi
 
 #peco
+## ghqによるリポジトリ移動
 bindkey '^]' peco-src
 function peco-src() {
   local src=$(ghq list --full-path | peco --query "$LBUFFER")
@@ -102,6 +85,7 @@ function peco-src() {
 }
 zle -N peco-src
 
+## コマンド履歴移動
 bindkey '^R' peco-history-selection
 function peco-history-selection() {
     BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
@@ -110,16 +94,8 @@ function peco-history-selection() {
 }
 zle -N peco-history-selection
 
-bindkey '^B^B' peco-git-checkout
-function peco-git-checkout() {
-  git branch -a --sort=-authordate |
-    grep -v -e '->' -e '*' |
-    perl -pe 's/^\h+//g' |
-    perl -pe 's#^remotes/origin/###' |
-    perl -nle 'print if !$c{$_}++' |
-    peco |
-    xargs git checkout
-bindkey '^B^B' peco-git-checkout
+## gitブランチの移動
+bindkey '^[' peco-git-checkout
 function peco-git-checkout() {
   git branch -a --sort=-authordate |
     grep -v -e '->' -e '*' |
@@ -130,9 +106,27 @@ function peco-git-checkout() {
     xargs git checkout
   zle clear-screen
 }
-zle -N peco-git-checkout  zle clear-screen
-}
 zle -N peco-git-checkout
+
+## ファイル履歴移動
+autoload -Uz add-zsh-hook
+autoload -Uz chpwd_recent_dirs cdr
+add-zsh-hook chpwd chpwd_recent_dirs
+
+zstyle ':chpwd:*' recent-dirs-max 5000
+zstyle ':chpwd:*' recent-dirs-default yes
+zstyle ':completion:*' recent-dirs-insert both
+
+bindkey '^V' peco-cdr
+function peco-cdr() {
+    local selected_dir=$(cdr -l | awk '{ print $2 }' | peco)
+    if [ -n "$selected_dir" ]; then
+        BUFFER="cd ${selected_dir}"
+        zle accept-line
+    fi
+    zle clear-screen
+}
+zle -N peco-cdr
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/alitaso/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/alitaso/google-cloud-sdk/path.zsh.inc'; fi
